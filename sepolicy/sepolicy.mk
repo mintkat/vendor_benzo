@@ -4,6 +4,3 @@
 
 BOARD_SEPOLICY_DIRS := \
     vendor/benzo/sepolicy
-
-BOARD_SEPOLICY_UNION := \
-    mac_permissions.xml
