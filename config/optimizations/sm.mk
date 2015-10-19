@@ -104,6 +104,10 @@ ifeq (true,$(FLOOP_NEST_OPTIMIZE))
    OPT8 := (lno)
 endif
 
+ifeq (true,$(ENABLE_EXTRAGCC))
+   OPT9 := (extras)
+endif
+
   GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)$(OPT5)$(OPT6)$(OPT7)$(OPT8)$(OPT9)
 
   ifneq ($(GCC_OPTIMIZATION_LEVELS),)
