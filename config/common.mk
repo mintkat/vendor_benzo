@@ -54,6 +54,10 @@ PRODUCT_COPY_FILES += \
     vendor/benzo/prebuilt/common/addon.d/95-backup.sh:system/addon.d/95-backup.sh \
     vendor/benzo/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
+# Enable SIP+VoIP
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+
 # Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
     vendor/benzo/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \

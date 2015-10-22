@@ -36,6 +36,9 @@
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService</item>
     </string-array>
 
+    <!-- set defaults for google services -->
+    <string name="config_appsAuthorizedForSharedAccounts">;com.android.vending;com.android.settings;</string>
+    <string name="config_persistentDataPackageName">com.google.android.gms</string>
 
     <!-- Hide Project Fi app unless it is being used -->
     <string-array name="config_disabledUntilUsedPreinstalledCarrierApps">
