@@ -9,6 +9,7 @@ ifneq ($(DISABLE_OPTIMIZATIONS),true)
 export USE_O3_OPTIMIZATIONS := true
 export FORCE_DISABLE_DEBUGGING := true
 export ENABLE_GOLD_LINKER := true
+export ENABLE_IPA_ANALYSER := true
 export TARGET_USE_PIPE := true
 export KRAIT_TUNINGS := true
 export ENABLE_PTHREAD := false
