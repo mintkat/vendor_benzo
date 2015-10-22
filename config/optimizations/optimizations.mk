@@ -3,6 +3,7 @@ export USE_ORACLE_JAVA := 1
 export USE_CCACHE := 1
 export USE_SYSTEM_CCACHE := 1
 export BLOCK_BUILD := true
+export ANDROID_COMPILE_WITH_JACK := false
 export DISABLE_OPTIMIZATIONS := false
 ifneq ($(DISABLE_OPTIMIZATIONS),true)
 export USE_O3_OPTIMIZATIONS := true
