@@ -78,6 +78,7 @@ PRODUCT_PACKAGES += \
     KernelAdiutor \
     LayersManager \
     LMT \
+    LockClock \
     Viper4Android
 
 # Busybox
