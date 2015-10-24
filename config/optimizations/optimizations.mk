@@ -16,6 +16,7 @@ export ENABLE_PTHREAD := false
 export ENABLE_GOMP := true
 export GRAPHITE_OPTS := true
 export ENABLE_EXTRAGCC := true
+export STRICT_ALIASING := true
 endif
 export TARGET_NDK_GCC_VERSION := 5.2
 export TARGET_GCC_VERSION_EXP := 5.2

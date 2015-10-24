@@ -100,8 +100,8 @@ ifeq (true,$(ENABLE_GOLD_LINKER))
    OPT7 := (gold-linker)
 endif
 
-ifeq (true,$(FLOOP_NEST_OPTIMIZE))
-   OPT8 := (lno)
+ifeq (true,$(STRICT_ALIASING))
+   OPT8 := (strict)
 endif
 
 ifeq (true,$(ENABLE_EXTRAGCC))
