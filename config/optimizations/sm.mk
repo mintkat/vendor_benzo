@@ -80,28 +80,28 @@ ifeq ($(GRAPHITE_OPTS),true)
    OPT2 := (graphite)
 endif
 
+ifeq (true,$(STRICT_ALIASING))
+   OPT3 := (strict)
+endif
+
 ifeq ($(KRAIT_TUNINGS),true)
-   OPT3 := (krait)
+   OPT4 := (krait)
 endif
 
 ifeq ($(FORCE_DISABLE_DEBUGGING),true)
-   OPT4 := (no-debug)
+   OPT5 := (no-debug)
 endif
 
 ifeq ($(ENABLE_PTHREAD),true)
-   OPT5 := (pthread)
+   OPT6 := (pthread)
 endif
 
 ifeq ($(ENABLE_GOMP),true)
-   OPT6 := (openmp)
+   OPT7 := (openmp)
 endif
 
 ifeq (true,$(ENABLE_GOLD_LINKER))
-   OPT7 := (gold-linker)
-endif
-
-ifeq (true,$(STRICT_ALIASING))
-   OPT8 := (strict)
+   OPT8 := (gold-linker)
 endif
 
 ifeq (true,$(ENABLE_EXTRAGCC))

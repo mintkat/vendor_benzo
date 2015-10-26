@@ -49,11 +49,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/benzo/prebuilt/common/etc/init.benzo.rc:root/init.benzo.rc
 
-# Density Backup
-PRODUCT_COPY_FILES += \
-    vendor/benzo/prebuilt/common/addon.d/95-backup.sh:system/addon.d/95-backup.sh \
-    vendor/benzo/prebuilt/common/etc/backup.conf:system/etc/backup.conf
-
 # Enable SIP+VoIP
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
@@ -79,6 +74,7 @@ PRODUCT_PACKAGES += \
     LayersManager \
     LMT \
     LockClock \
+    Trebuchet \
     Viper4Android
 
 # Busybox
