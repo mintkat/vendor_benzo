@@ -20,11 +20,9 @@ backup_prop() {
 }
 
 restore_prop() {
-    if [ "$persist_lcd_density" = "1" ]; then
-            if [ -f "$propbackuppath/build.prop" ]; then
-                local USERLCD=`sed -n -e'/persist\.sys\.lcd_density/s/^.*=//p' $propbackuppath/build.prop`
-                busybox sed -i "s|persist.sys.lcd_density=.*|persist.sys.lcd_density=$USERLCD|" /system/build.prop
-            fi
+    if [ -f "$propbackuppath/build.prop" ]; then
+        local USERLCD=`sed -n -e'/persist\.sys\.lcd_density/s/^.*=//p' $propbackuppath/build.prop`
+        busybox sed -i "s|persist.sys.lcd_density=.*|persist.sys.lcd_density=$USERLCD|" /system/build.prop
     fi
 }
 

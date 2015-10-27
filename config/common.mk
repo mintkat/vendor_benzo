@@ -32,7 +32,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/benzo/prebuilt/common/bin/50-benzo.sh:system/addon.d/50-benzo.sh \
     vendor/benzo/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/benzo/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
