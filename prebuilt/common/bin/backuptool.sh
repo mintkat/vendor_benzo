@@ -10,6 +10,46 @@ export V=6.0
 # Scripts in /system/addon.d expect to find backuptool.functions in /tmp
 cp -f /tmp/install/bin/backuptool.functions /tmp
 
+# Backup layers
+preserve_layers() {
+  mkdir -p /tmp/layers
+  cp -a /system/vendor/overlay/* /tmp/layers
+  chmod 644 /tmp/layers/*.apk
+}
+
+# Restore Layers
+restore_layers() {
+  mkdir -p /system/vendor/overlay
+  cp -a /tmp/layers/* /system/vendor/overlay
+  rm -rf /tmp/layers
+}
+
+# Backup hosts
+preserve_hosts() {
+  cp -a /system/etc/hosts /tmp/hosts
+  chmod 644 /tmp/hosts
+}
+
+# Restore hosts
+restore_hosts() {
+  cp -a /tmp/hosts /system/etc/hosts
+  rm -rf /tmp/hosts
+}
+
+# Backup lcd density
+preserve_prop() {
+    cp "/system/build.prop" "/tmp/backup/prop/build.prop"
+}
+
+# Restore lcd density
+restore_prop() {
+    if [ -f "/tmp/backup/prop/build.prop" ]; then
+        local USERLCD=`sed -n -e'/persist\.sys\.lcd_density/s/^.*=//p' /tmp/backup/prop/build.prop`
+        busybox sed -i "s|persist.sys.lcd_density=.*|persist.sys.lcd_density=$USERLCD|" /system/build.prop
+        rm -Rrf /tmp/backup/prop/
+    fi
+}
+
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   if [ -d /system/addon.d/ ]; then
@@ -53,6 +93,9 @@ case "$1" in
     mkdir -p $C
     check_prereq
     preserve_addon_d
+    preserve_layers
+    preserve_hosts
+    preserve_prop
     run_stage pre-backup
     run_stage backup
     run_stage post-backup
@@ -63,6 +106,9 @@ case "$1" in
     run_stage restore
     run_stage post-restore
     restore_addon_d
+    restore_layers
+    restore_hosts
+    restore_prop
     rm -rf $C
     sync
   ;;
