@@ -6,6 +6,7 @@ export BLOCK_BUILD := false
 export ANDROID_COMPILE_WITH_JACK := false
 export DISABLE_OPTIMIZATIONS := false
 ifneq ($(DISABLE_OPTIMIZATIONS),true)
+export DONT_ERROROUT := true
 export USE_O3_OPTIMIZATIONS := false
 export FORCE_DISABLE_DEBUGGING := true
 export ENABLE_GOLD_LINKER := true
@@ -17,6 +18,7 @@ export ENABLE_GOMP := true
 export GRAPHITE_OPTS := true
 export ENABLE_EXTRAGCC := true
 export STRICT_ALIASING := true
+export ENABLE_SANITIZE := true
 endif
 export TARGET_NDK_GCC_VERSION := 5.2
 export TARGET_GCC_VERSION_EXP := 5.2
