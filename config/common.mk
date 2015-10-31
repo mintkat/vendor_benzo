@@ -69,6 +69,7 @@ PRODUCT_COPY_FILES += \
 
 # Extra packages
 PRODUCT_PACKAGES += \
+    BenzoOTA \
     KernelAdiutor \
     LayersManager \
     LMT \
