@@ -75,6 +75,7 @@ PRODUCT_PACKAGES += \
     LayersManager \
     LMT \
     LockClock \
+    Terminal \
     Trebuchet \
     Viper4Android
 
