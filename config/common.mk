@@ -75,8 +75,8 @@ PRODUCT_PACKAGES += \
     LayersManager \
     LMT \
     LockClock \
+    NovaLauncher \
     Terminal \
-    Trebuchet \
     Viper4Android
 
 # Busybox
