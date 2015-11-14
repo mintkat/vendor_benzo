@@ -36,20 +36,6 @@ restore_hosts() {
   rm -rf /tmp/hosts
 }
 
-# Backup lcd density
-preserve_prop() {
-    cp "/system/build.prop" "/tmp/backup/prop/build.prop"
-}
-
-# Restore lcd density
-restore_prop() {
-    if [ -f "/tmp/backup/prop/build.prop" ]; then
-        local USERLCD=`sed -n -e'/persist\.sys\.lcd_density/s/^.*=//p' /tmp/backup/prop/build.prop`
-        busybox sed -i "s|persist.sys.lcd_density=.*|persist.sys.lcd_density=$USERLCD|" /system/build.prop
-        rm -Rrf /tmp/backup/prop/
-    fi
-}
-
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   if [ -d /system/addon.d/ ]; then
@@ -95,7 +81,6 @@ case "$1" in
     preserve_addon_d
     preserve_layers
     preserve_hosts
-    preserve_prop
     run_stage pre-backup
     run_stage backup
     run_stage post-backup
@@ -108,7 +93,6 @@ case "$1" in
     restore_addon_d
     restore_layers
     restore_hosts
-    restore_prop
     rm -rf $C
     sync
   ;;
