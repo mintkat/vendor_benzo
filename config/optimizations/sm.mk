@@ -28,6 +28,7 @@
 
  HOST_OS := linux
 
+ifneq ($(filter benzo_shamu,$(TARGET_PRODUCT)),)
  TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_SM_AND)/lib
  export TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_SM_AND)/lib
 
@@ -41,14 +42,8 @@
  SM_AND_STATUS := $(filter (release) (prerelease) (experimental),$(SM_AND))
  SM_AND_VERSION := $(SM_AND_NAME)-$(SM_AND_DATE)-$(SM_AND_STATUS)
 
- # Write version info to build.prop
- ifeq (5.1,$(TARGET_GCC_VERSION))
-   PRODUCT_PROPERTY_OVERRIDES += \
-     ro.sm.android=$(SM_AND_NAME)-$(SM_AND_DATE)-(experimental)
- else
-   PRODUCT_PROPERTY_OVERRIDES += \
-     ro.sm.android=$(SM_AND_VERSION)
- endif
+ PRODUCT_PROPERTY_OVERRIDES += \
+   ro.sm.android=$(SM_AND_VERSION)
 
  # Path to kernel toolchain
  SM_KERNEL_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-$(TARGET_SM_KERNEL)
@@ -59,18 +54,44 @@
  SM_KERNEL_STATUS := $(filter (release) (prerelease) (experimental),$(SM_KERNEL))
  SM_KERNEL_VERSION := $(SM_KERNEL_NAME)-$(SM_KERNEL_DATE)-$(SM_KERNEL_STATUS)
 
- # Write version info to build.prop
- ifeq (5.1,$(TARGET_GCC_VERSION_KERNEL))
-   PRODUCT_PROPERTY_OVERRIDES += \
-     ro.sm.kernel=$(SM_KERNEL_NAME)-$(SM_KERNEL_DATE)-(experimental)
- else
    PRODUCT_PROPERTY_OVERRIDES += \
      ro.sm.kernel=$(SM_KERNEL_VERSION)
- endif
+endif
+
+ifneq ($(filter benzo_angler,$(TARGET_PRODUCT)),)
+ TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_SM_AND)/lib
+ export TARGET_ARCH_LIB_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_SM_AND)/lib
+
+ # Path to ROM toolchain
+ SM_AND_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-$(TARGET_SM_AND)
+ SM_AND := $(shell $(SM_AND_PATH)/bin/aarch64-linux-android-gcc --version)
+
+ # Find strings in version info
+ SM_AND_NAME := $(filter %sabermod,$(SM_AND))
+ SM_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_AND))
+ SM_AND_STATUS := $(filter (release) (prerelease) (experimental),$(SM_AND))
+ SM_AND_VERSION := $(SM_AND_NAME)-$(SM_AND_DATE)-$(SM_AND_STATUS)
+
+ PRODUCT_PROPERTY_OVERRIDES += \
+   ro.sm.android=$(SM_AND_VERSION)
+
+ # Path to kernel toolchain
+ SM_KERNEL_PATH := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-$(TARGET_SM_KERNEL)
+ SM_KERNEL := $(shell $(SM_KERNEL_PATH)/bin/aarch64-gcc --version)
+
+ SM_KERNEL_NAME := $(filter %sabermod,$(SM_KERNEL))
+ SM_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_KERNEL))
+ SM_KERNEL_STATUS := $(filter (release) (prerelease) (experimental),$(SM_KERNEL))
+ SM_KERNEL_VERSION := $(SM_KERNEL_NAME)-$(SM_KERNEL_DATE)-$(SM_KERNEL_STATUS)
+
+   PRODUCT_PROPERTY_OVERRIDES += \
+     ro.sm.kernel=$(SM_KERNEL_VERSION)
+endif
 
  # Add extra libs for the compilers to use
  export LD_LIBRARY_PATH := $(TARGET_ARCH_LIB_PATH):$(LD_LIBRARY_PATH)
  export LIBRARY_PATH := $(TARGET_ARCH_LIB_PATH):$(LIBRARY_PATH)
+
 
 ifeq ($(USE_O3_OPTIMIZATIONS),true)
    OPT1 := (O3)

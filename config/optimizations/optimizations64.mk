@@ -6,7 +6,7 @@ export USE_SYSTEM_CCACHE := 1
 export BLOCK_BUILD := false
 
 # Target device
-export TARGET_DEVICE := shamu
+export TARGET_DEVICE := angler
 
 # Build
 export ANDROID_COMPILE_WITH_JACK := false
@@ -15,7 +15,6 @@ ifneq ($(DISABLE_OPTIMIZATIONS),true)
 export DONT_ERROROUT := false
 export USE_O3_OPTIMIZATIONS := false
 export FORCE_DISABLE_DEBUGGING := true
-export ENABLE_GOLD_LINKER := true
 export ENABLE_IPA_ANALYSER := true
 export TARGET_USE_PIPE := true
 export KRAIT_TUNINGS := true
