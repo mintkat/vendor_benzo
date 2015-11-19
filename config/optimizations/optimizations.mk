@@ -2,36 +2,34 @@
 export USE_HOST_LEX := yes
 export USE_ORACLE_JAVA := 1
 export USE_CCACHE := 1
-export USE_SYSTEM_CCACHE := 1
+export USE_SYSTEM_CCACHE :=
 export BLOCK_BUILD := false
 
 # Target device
-export TARGET_DEVICE := shamu
+export TARGET_DEVICE := angler
 
 # Build
 export ANDROID_COMPILE_WITH_JACK := false
 export DISABLE_OPTIMIZATIONS := false
 ifneq ($(DISABLE_OPTIMIZATIONS),true)
 export DONT_ERROROUT := false
-export USE_O3_OPTIMIZATIONS := false
 export FORCE_DISABLE_DEBUGGING := true
-export ENABLE_GOLD_LINKER := true
 export ENABLE_IPA_ANALYSER := true
 export TARGET_USE_PIPE := true
-export KRAIT_TUNINGS := true
+export CORTEX_TUNINGS := false
 export ENABLE_PTHREAD := true
 export ENABLE_GOMP := true
 export GRAPHITE_OPTS := true
 export ENABLE_EXTRAGCC := true
 export STRICT_ALIASING := true
-export ENABLE_SANITIZE := true
+export ENABLE_SANITIZE := false
 endif
 
 # Toolchain and other
-export TARGET_NDK_GCC_VERSION := 5.2
-export TARGET_GCC_VERSION_EXP := 5.2
-export TARGET_GCC_VERSION := 5.2
-export TARGET_GCC_VERSION_KERNEL := 6.0
+export TARGET_NDK_GCC_VERSION := 4.9
+export TARGET_GCC_VERSION_EXP := 4.9
+export TARGET_GCC_VERSION := 4.9
+export TARGET_GCC_VERSION_KERNEL := 4.9
 
 # benzoCore
 export KBUILD_BUILD_USER := xanaxdroid

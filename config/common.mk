@@ -50,8 +50,8 @@ PRODUCT_COPY_FILES += \
     vendor/benzo/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # init file
-PRODUCT_COPY_FILES += \
-    vendor/benzo/prebuilt/common/etc/init.benzo.rc:root/init.benzo.rc
+#PRODUCT_COPY_FILES += \
+#    vendor/benzo/prebuilt/common/etc/init.benzo.rc:root/init.benzo.rc
 
 # Google DNS server
 PRODUCT_COPY_FILES += \
@@ -63,30 +63,22 @@ PRODUCT_COPY_FILES += \
 
 # Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
-    vendor/benzo/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    vendor/benzo/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/benzo/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
 
 # SuperSU
 PRODUCT_COPY_FILES += \
    vendor/benzo/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
    vendor/benzo/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-# Viper4Android etxra files
-PRODUCT_COPY_FILES += \
-    vendor/benzo/prebuilt/common/addon.d/91-v4a.sh:system/addon.d/91-v4a.sh \
-    vendor/benzo/prebuilt/common/etc/v4a.zip:system/addon.d/v4a.zip
-
 # Extra packages
 PRODUCT_PACKAGES += \
     BenzoBlock \
-    BenzoOTA \
     KernelAdiutor \
     LayersManager \
-    LMT \
     LockClock \
-    NovaLauncher \
+    OmniSwitch \
     Terminal \
-    Viper4Android
+    Trebuchet
 
 # Busybox
 PRODUCT_PACKAGES += \
