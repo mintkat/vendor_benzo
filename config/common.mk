@@ -75,6 +75,7 @@ PRODUCT_PACKAGES += \
     BenzoBlock \
     KernelAdiutor \
     LayersManager \
+    LMT \
     LockClock \
     OmniSwitch \
     Terminal \
