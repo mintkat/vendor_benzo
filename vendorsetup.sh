@@ -14,3 +14,4 @@
 # limitations under the License.
 #
 add_lunch_combo benzo_angler-userdebug
+add_lunch_combo benzo_angler-user
