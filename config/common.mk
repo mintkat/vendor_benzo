@@ -72,14 +72,16 @@ PRODUCT_COPY_FILES += \
 
 # Extra packages
 PRODUCT_PACKAGES += \
+    AudioFX \
     BenzoBlock \
+    BenzoOTA \
     KernelAdiutor \
     LayersManager \
     LMT \
     LockClock \
+    NovaLauncher \
     OmniSwitch \
-    Terminal \
-    Trebuchet
+    Terminal
 
 # Busybox
 PRODUCT_PACKAGES += \
