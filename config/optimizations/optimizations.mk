@@ -2,7 +2,7 @@
 export USE_HOST_LEX := yes
 export USE_ORACLE_JAVA := 1
 export USE_CCACHE := 1
-export USE_SYSTEM_CCACHE :=
+export USE_SYSTEM_CCACHE := 1
 export BLOCK_BUILD := false
 
 # Target device
@@ -13,6 +13,7 @@ export ANDROID_COMPILE_WITH_JACK := false
 export DISABLE_OPTIMIZATIONS := false
 ifneq ($(DISABLE_OPTIMIZATIONS),true)
 export DONT_ERROROUT := false
+export USE_O3_OPTIMIZATIONS := true
 export FORCE_DISABLE_DEBUGGING := true
 export ENABLE_IPA_ANALYSER := true
 export TARGET_USE_PIPE := true
@@ -22,7 +23,7 @@ export ENABLE_GOMP := true
 export GRAPHITE_OPTS := true
 export ENABLE_EXTRAGCC := true
 export STRICT_ALIASING := true
-export ENABLE_SANITIZE := false
+export ENABLE_SANITIZE := true
 endif
 
 # Toolchain and other
