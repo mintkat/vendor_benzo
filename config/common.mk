@@ -83,10 +83,10 @@ PRODUCT_PACKAGES += \
     BenzoBlock \
     BenzoOTA \
     KernelAdiutor \
+    Launcher3 \
     LayersManager \
     LMT \
     LockClock \
-    NovaLauncher \
     OmniSwitch \
     Terminal
 
