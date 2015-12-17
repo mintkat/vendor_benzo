@@ -88,6 +88,7 @@ PRODUCT_PACKAGES += \
     LMT \
     LockClock \
     OmniSwitch \
+    SaberChrome \
     Terminal
 
 # Busybox
