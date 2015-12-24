@@ -88,6 +88,7 @@ PRODUCT_PACKAGES += \
     LayersManager \
     LMT \
     LockClock \
+    OmniJaws \
     OmniSwitch \
     SaberChrome \
     Terminal
