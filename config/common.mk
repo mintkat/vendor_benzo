@@ -83,6 +83,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     BenzoBlock \
     BenzoOTA \
+    Browser \
     KernelAdiutor \
     Launcher3 \
     LayersManager \
@@ -90,7 +91,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     OmniJaws \
     OmniSwitch \
-    SaberChrome \
     Terminal
 
 # Busybox
