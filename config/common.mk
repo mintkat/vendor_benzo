@@ -84,6 +84,7 @@ PRODUCT_PACKAGES += \
     BenzoBlock \
     BenzoOTA \
     Browser \
+    Gallery2 \
     KernelAdiutor \
     Launcher3 \
     LayersManager \
