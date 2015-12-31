@@ -94,19 +94,15 @@ ifeq (true,$(ENABLE_GOLD_LINKER))
    OPT8 := (gold-linker)
 endif
 
-ifeq (true,$(POLLY_OPTIMIZATION))
-   OPT9 := (polly)
-endif
-
 ifeq (true,$(ENABLE_EXTRAGCC))
-   OPT10 := (extras)
+   OPT9 := (extras)
 endif
 
 ifeq (true,$(ENABLE_SANITIZE))
-   OPT11 := (mem-sanitize)
+   OPT10 := (mem-sanitize)
 endif
 
-  GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)$(OPT5)$(OPT6)$(OPT7)$(OPT8)$(OPT9)$(OPT10)$(OPT11)
+  GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)$(OPT5)$(OPT6)$(OPT7)$(OPT8)$(OPT9)$(OPT10)
 
   ifneq ($(GCC_OPTIMIZATION_LEVELS),)
     PRODUCT_PROPERTY_OVERRIDES += \

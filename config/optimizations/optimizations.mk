@@ -24,7 +24,6 @@ export GRAPHITE_OPTS := true
 export ENABLE_EXTRAGCC := true
 export STRICT_ALIASING := true
 export ENABLE_SANITIZE := true
-export POLLY_OPTIMIZATION := true
 endif
 
 # Toolchain and other
