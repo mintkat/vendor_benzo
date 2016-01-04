@@ -33,11 +33,11 @@
 
   # Path to toolchain
   SM_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_SM_AND)
-  SM_AND := $(shell $(SM_AND_PATH)/bin/aarch64-linux-android-gcc --version)
+  SM_AND := $(shell cat $(SM_AND_PATH)/VERSION)
 
   # Find strings in version info
   SM_AND_NAME := $(filter %sabermod,$(SM_AND))
-  SM_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_AND))
+  SM_AND_DATE := $(filter 20140% 20141% 20150% 20151% 2016%,$(SM_AND))
   SM_AND_STATUS := $(filter (release) (prerelease) (experimental),$(SM_AND))
   SM_AND_VERSION := $(SM_AND_NAME)-$(SM_AND_DATE)-$(SM_AND_STATUS)
 
@@ -50,7 +50,7 @@
   SM_KERNEL := $(shell $(SM_KERNEL_PATH)/bin/aarch64-gcc --version)
 
   SM_KERNEL_NAME := $(filter %sabermod,$(SM_KERNEL))
-  SM_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_KERNEL))
+  SM_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151% 2016%,$(SM_KERNEL))
   SM_KERNEL_STATUS := $(filter (release) (prerelease) (experimental),$(SM_KERNEL))
   SM_KERNEL_VERSION := $(SM_KERNEL_NAME)-$(SM_KERNEL_DATE)-$(SM_KERNEL_STATUS)
 
