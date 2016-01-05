@@ -90,9 +90,8 @@ ifeq ($(ENABLE_GOMP),true)
    OPT7 := (openmp)
 endif
 
-ifeq (true,$(ENABLE_GOLD_LINKER))
-   OPT8 := (gold-linker)
-endif
+# DragonTC Clang with Polly
+   OPT8 := (polly)
 
 ifeq (true,$(ENABLE_EXTRAGCC))
    OPT9 := (extras)
