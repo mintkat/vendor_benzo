@@ -108,6 +108,9 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     OmniSwitch
 
+# T-Mobile theme engine
+include vendor/benzo/config/themes_common.mk
+
 # Busybox
 PRODUCT_PACKAGES += \
     Busybox
