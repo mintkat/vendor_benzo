@@ -1,5 +1,5 @@
 # Benzo Rom 
-# See config/common_full.xml to set target device and some build options
+# 
 # See config/optimizations/optimizations.mk to set build optimizations
 # See config/common_versions.mk to set build numbers and OTA info
 

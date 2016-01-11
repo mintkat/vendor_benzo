@@ -1,3 +1,13 @@
+# System
+export USE_HOST_LEX := yes
+export USE_JAVA8 := 1
+export USE_CCACHE := 1
+export USE_SYSTEM_CCACHE := 1
+export BLOCK_BUILD := false
+
+# Target device
+export TARGET_DEVICE := angler
+
 # Build
 export ANDROID_COMPILE_WITH_JACK := false
 export DISABLE_OPTIMIZATIONS := false
