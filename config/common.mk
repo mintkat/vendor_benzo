@@ -37,6 +37,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.adb.secure=0 \
 	ro.secure=0
 
+# Enable MTP by default
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.usb.config=mtp,adb \
+    persist.sys.usb.config=mtp,adb
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/benzo/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
