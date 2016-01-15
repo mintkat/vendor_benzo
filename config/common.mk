@@ -106,8 +106,7 @@ PRODUCT_PACKAGES += \
     LMT \
     LockClock \
     OmniJaws \
-    OmniSwitch \
-    Terminal
+    OmniSwitch
 
 # Busybox
 PRODUCT_PACKAGES += \
