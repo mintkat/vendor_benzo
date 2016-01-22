@@ -29,8 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.allow.mock.location=0 \
     ro.debuggable=1 \
-    persist.service.adb.enable=1 \
-    ro.layers.noIcon=noIcon
+    persist.service.adb.enable=1
 
 # Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -77,10 +76,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/benzo/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
     vendor/benzo/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
-
-# Layers backup
-PRODUCT_COPY_FILES += \
-    vendor/benzo/prebuilt/common/addon.d/71-layers.sh:system/addon.d/71-layers.sh
 
 # SuperSU
 PRODUCT_COPY_FILES += \
