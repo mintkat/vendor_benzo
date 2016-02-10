@@ -63,8 +63,8 @@ PRODUCT_COPY_FILES += \
     vendor/benzo/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # init file
-#PRODUCT_COPY_FILES += \
-#    vendor/benzo/prebuilt/common/etc/init.benzo.rc:root/init.benzo.rc
+PRODUCT_COPY_FILES += \
+    vendor/benzo/prebuilt/common/etc/init.benzo.rc:root/init.benzo.rc
 
 # Google DNS server
 PRODUCT_COPY_FILES += \
