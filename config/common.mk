@@ -107,6 +107,7 @@ PRODUCT_PACKAGES += \
     LMT \
     LockClock \
     OmniJaws \
+    OmniStyle \
     OmniSwitch
 
 # Busybox
