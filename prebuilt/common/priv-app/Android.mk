@@ -18,7 +18,7 @@ LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_PRIVILEGED_MODULE := true
-LOCAL_PREBUILT_JNI_LIBS_arm := @lib/armeabi/libTouchServiceNative.so
+LOCAL_PREBUILT_JNI_LIBS_arm := @lib/armeabi-v7a/libTouchServiceNative.so
 include $(BUILD_PREBUILT)
 
 # Install Viper4Android
