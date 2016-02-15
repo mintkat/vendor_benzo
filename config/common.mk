@@ -23,14 +23,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=dd-MM-yyyy \
     ro.com.android.dataroaming=false \
-    ro.build.selinux=0 \
+    ro.build.selinux=1 \
     persist.debug.wfd.enable=1 \
     ro.adb.secure=0 \
     ro.secure=0 \
     ro.allow.mock.location=0 \
     ro.debuggable=1 \
     persist.service.adb.enable=1 \
-    ro.layers.noIcon=noIcon \
     persist.sys.root_access=3
 
 # Enable ADB authentication
