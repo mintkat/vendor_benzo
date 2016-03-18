@@ -98,7 +98,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     BenzoBlock \
     BenzoOTA \
-    Chromium \
+    Browser \
     Gallery2 \
     KernelAdiutor \
     Launcher3 \

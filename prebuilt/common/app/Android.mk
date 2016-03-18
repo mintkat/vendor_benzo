@@ -15,17 +15,6 @@ LOCAL_PREBUILT_JNI_LIBS_arm := \
 	@lib/armeabi/libtcpdump_exec.so
 include $(BUILD_PREBUILT)
 
-# Chromium Browser 50.0.2652.0
-include $(CLEAR_VARS)
-LOCAL_MODULE := Chromium
-LOCAL_SRC_FILES := Chromium/Chromium.apk
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Browser
-LOCAL_MODULE_PATH := $(TARGET_OUT)/app
-include $(BUILD_PREBUILT)
-
 # Install Layers Manager
 include $(CLEAR_VARS)
 LOCAL_MODULE := LayersManager
