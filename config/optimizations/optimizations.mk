@@ -11,7 +11,7 @@ export ANDROID_COMPILE_WITH_JACK := false
 export DISABLE_OPTIMIZATIONS := false
 ifneq ($(DISABLE_OPTIMIZATIONS),true)
 export DONT_ERROROUT := false
-export USE_O3_OPTIMIZATIONS := true
+export USE_O3_OPTIMIZATIONS := false
 export FORCE_DISABLE_DEBUGGING := true
 export ENABLE_IPA_ANALYSER := true
 export TARGET_USE_PIPE := true
