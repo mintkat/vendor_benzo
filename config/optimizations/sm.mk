@@ -76,20 +76,17 @@ ifeq ($(CORTEX_TUNINGS),true)
    OPT4 := (cortex-a57)
 endif
 
-ifeq ($(FORCE_DISABLE_DEBUGGING),true)
-   OPT5 := (no-debug)
-endif
+# Used by DTC
+   OPT5 := (ThinLTO)
+   OPT6 := (polly)
 
 ifeq ($(ENABLE_PTHREAD),true)
-   OPT6 := (pthread)
+   OPT7 := (pthread)
 endif
 
 ifeq ($(ENABLE_GOMP),true)
-   OPT7 := (openmp)
+   OPT8 := (OpenMP)
 endif
-
-# DragonTC Clang with Polly
-   OPT8 := (polly)
 
 ifeq (true,$(ENABLE_EXTRAGCC))
    OPT9 := (extras)
