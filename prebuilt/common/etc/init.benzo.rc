@@ -5,6 +5,10 @@ on init
     # Run sysinit
     start sysinit
 
+    # Allow system_app to write to setenforce
+    chown root system /sys/fs/selinux/enforce
+    chmod 0660 /sys/fs/selinux/enforce
+
 on boot
 
     chown system system /dev/cpuctl/cpu.notify_on_migrate

@@ -1,0 +1,2 @@
+# Allow setenforce
+allow system_app kernel:security setenforce;
