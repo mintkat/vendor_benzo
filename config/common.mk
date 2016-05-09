@@ -92,7 +92,7 @@ PRODUCT_COPY_FILES += \
     vendor/benzo/prebuilt/common/addon.d/91-v4a.sh:system/addon.d/91-v4a.sh \
     vendor/benzo/prebuilt/common/etc/v4a.zip:system/addon.d/v4a.zip
 PRODUCT_PACKAGES += \
-    ViPER4Android_FX_A4.x
+    ViPER4Android
 
 # Assertive Disaply
 PRODUCT_COPY_FILES += \
