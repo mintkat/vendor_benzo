@@ -4,7 +4,7 @@ export USE_SYSTEM_CCACHE := 1
 export BLOCK_BUILD := true
 
 # Target device
-export TARGET_DEVICE := angler
+export TARGET_DEVICE := mako
 
 # Build
 export ANDROID_COMPILE_WITH_JACK := false
@@ -13,9 +13,10 @@ ifneq ($(DISABLE_OPTIMIZATIONS),true)
 export DONT_ERROROUT := false
 export USE_O3_OPTIMIZATIONS := false
 export FORCE_DISABLE_DEBUGGING := true
+export ENABLE_GOLD_LINKER := true
 export ENABLE_IPA_ANALYSER := true
 export TARGET_USE_PIPE := true
-export CORTEX_TUNINGS := true
+export KRAIT_TUNINGS := true
 export ENABLE_PTHREAD := true
 export ENABLE_GOMP := true
 export GRAPHITE_OPTS := true
@@ -24,14 +25,14 @@ export STRICT_ALIASING := true
 export ENABLE_SANITIZE := true
 endif
 
-# Toolchain and other
-export TARGET_NDK_GCC_VERSION := 4.9
-export TARGET_GCC_VERSION_EXP := 4.9
-export TARGET_GCC_VERSION := 4.9
-export TARGET_GCC_VERSION_KERNEL := 6.1
+# Toolchain
+export TARGET_NDK_GCC_VERSION := 5.2
+export TARGET_GCC_VERSION_EXP := 5.3
+export TARGET_GCC_VERSION := 5.3
+export TARGET_GCC_VERSION_KERNEL := 7.0
 
 # benzoCore
-export KBUILD_BUILD_USER := xanaxdroid
+export KBUILD_BUILD_USER := jmelpri
 export KBUILD_BUILD_HOST := benzo
 
 # Prop Optimizations

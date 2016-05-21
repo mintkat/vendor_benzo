@@ -13,5 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-add_lunch_combo benzo_angler-userdebug
-add_lunch_combo benzo_angler-user
+add_lunch_combo benzo_mako-userdebug
+add_lunch_combo benzo_mako-user
