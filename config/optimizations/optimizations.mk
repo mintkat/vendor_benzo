@@ -26,7 +26,7 @@ export ENABLE_SANITIZE := true
 endif
 
 # Toolchain
-export TARGET_NDK_GCC_VERSION := 5.2
+export TARGET_NDK_GCC_VERSION := 5.3
 export TARGET_GCC_VERSION_EXP := 5.3
 export TARGET_GCC_VERSION := 5.3
 export TARGET_GCC_VERSION_KERNEL := 7.0
