@@ -13,10 +13,9 @@ ifneq ($(DISABLE_OPTIMIZATIONS),true)
 export DONT_ERROROUT := false
 export USE_O3_OPTIMIZATIONS := false
 export FORCE_DISABLE_DEBUGGING := true
-export ENABLE_GOLD_LINKER := true
 export ENABLE_IPA_ANALYSER := true
 export TARGET_USE_PIPE := true
-export KRAIT_TUNINGS := true
+export CORTEX_TUNINGS := true
 export ENABLE_PTHREAD := true
 export ENABLE_GOMP := true
 export GRAPHITE_OPTS := true
@@ -25,11 +24,11 @@ export STRICT_ALIASING := true
 export ENABLE_SANITIZE := true
 endif
 
-# Toolchain
-export TARGET_NDK_GCC_VERSION := 5.3
+# Toolchain and other
+export TARGET_NDK_GCC_VERSION := 4.9
 export TARGET_GCC_VERSION_EXP := 5.3
 export TARGET_GCC_VERSION := 5.3
-export TARGET_GCC_VERSION_KERNEL := 7.0
+export TARGET_GCC_VERSION_KERNEL := 6.0
 
 # benzoCore
 export KBUILD_BUILD_USER := jmelpri
@@ -39,6 +38,8 @@ export KBUILD_BUILD_HOST := benzo
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.performance.tuning=1 \
     keyguard.no_require_sim=true \
+    dalvik.vm.dexopt-flags=m=y \
+    persist.sys.purgeable_assets=1 \
     persist.service.lgospd.enable=0 \
     persist.service.pcsync.enable=0 \
     ro.facelock.black_timeout=400 \
@@ -49,12 +50,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.use_intro_anim=false \
     ro.max.fling_velocity=12000 \
     ro.min.fling_velocity=8000 \
+    ro.min_pointer_dur=8 \
+    ro.ril.enable.a52=1 \
+    ro.ril.enable.a53=0 \
     ro.ril.enable.amr.wideband=1 \
     ro.sys.fw.bg_apps_limit=20 \
     ro.setupwizard.network_required=false \
     ro.setupwizard.gservices_delay=-1 \
     ro.com.google.networklocation=0 \
+    ro.telephony.call_ring.delay=0 \
     touch.pressure.scale=2 \
+    view.scroll_friction=10 \
     wifi.supplicant_scan_interval=180 \
     windowsmgr.max_events_per_sec=150
 

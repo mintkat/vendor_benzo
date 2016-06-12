@@ -89,10 +89,11 @@ PRODUCT_COPY_FILES += \
 
 # Assertive Disaply
 PRODUCT_COPY_FILES += \
-    vendor/benzo/prebuilt/common/etc/ad_calib.cfg:system/etc/ad_calib.cfg
+    vendor/benzo/prebuilt/common/media/display/calib.cfg:system/media/display/calib.cfg
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qcom.ad=1 \
-    ro.qcom.ad.calib.data=/system/etc/ad_calib.cfg \
+    ro.qcom.ad.sensortype=1 \
+    ro.qcom.ad.calib.data=/system/media/display/calib.cfg \
     persist.radio.add_power_save=1 \
     persist.radio.data_no_toggle=1
 
@@ -105,7 +106,6 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LayersManager \
     LMT \
-    LockClock \
     OmniJaws \
     OmniStyle \
     OmniSwitch
